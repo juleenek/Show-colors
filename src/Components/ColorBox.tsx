@@ -1,7 +1,13 @@
 import React from 'react';
 
-type Props = {};
+type Props = {
+  color: string;
+};
 
-export const ColorBox: React.FC<Props> = () => {
-  return <div className='colorBox'></div>;
+export const ColorBox: React.FC<Props> = ({ color }) => {
+  return (
+    <div className='colorBox' style={{ backgroundColor: `${color}` }}>
+      {color === '' ? (<p>Empty Value</p>) : (<p>{color}</p>)}
+    </div>
+  );
 };

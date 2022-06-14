@@ -1,14 +1,14 @@
 import { ColorBox } from './Components/ColorBox';
-import AddColor from './Components/AddColor';
+import { AddColor } from './Components/AddColor';
 import { useState } from 'react';
 
 function App() {
-  const [color, setColor] = useState('Empty Value');
+  const [color, setColor] = useState('');
 
   return (
     <main>
-      <ColorBox />
-      <AddColor />
+      <ColorBox color={color} />
+      <AddColor color={color} setColor={setColor} />
     </main>
   );
 }

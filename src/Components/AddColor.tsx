@@ -1,14 +1,19 @@
-import React from 'react'
+type Props = {
+  color: string;
+  setColor: React.Dispatch<React.SetStateAction<string>>;
+};
 
-export default function AddColor() {
+export const AddColor: React.FC<Props> = ({ color, setColor }) => {
   return (
-    <form className='searchForm' onSubmit={(e) => e.preventDefault()}>
-      <input
-        id='search'
-        type='text'
-        role='searchbox'
-        placeholder='Add color name'
-      />
-    </form>
-  )
-}
+    <form className='colorForm' onSubmit={(e) => e.preventDefault()}>
+    <input
+      id='addColor'
+      type='text'
+      role='addColor'
+      placeholder='Add color name'
+      value={color}
+      onChange={(e) => setColor(e.target.value)}
+    />
+  </form>
+  );
+};
